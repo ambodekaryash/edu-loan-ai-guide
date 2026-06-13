@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback for client-side routing on refresh / deep links.
+# Nitro's netlify preset also writes its own _redirects for SSR functions;
+# this rule is the safety net for pure static asset hosting.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
